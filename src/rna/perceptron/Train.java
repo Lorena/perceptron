@@ -7,14 +7,15 @@ import java.util.Random;
 
 public class Train {
 
-    protected static int EPOCH = 0;
+    private static double LEARNING_RATE;
 
+    private double activationFunctionResult;
+    private double[] weights;
     private FunctionActivation functionActivation;
-    private double LEARNING_RATE;
 
-    protected double activationFunctionResult;
+    private int epoch = 0;
+
     protected Examples examples;
-    protected double[] weights;
 
     public void config(double threshould, double learningRate, String fuctionName) {
         LEARNING_RATE = learningRate;
@@ -27,10 +28,14 @@ public class Train {
         do {
             examples.noExistError();
             adjustTheCorrectWeights();
-            EPOCH++;
+            epoch++;
         } while (examples.hasError());
 
         showInformations();
+    }
+
+    public double[] getWeights() {
+        return weights;
     }
 
     private void adjustTheCorrectWeights() {
@@ -58,7 +63,7 @@ public class Train {
     }
 
     protected void showInformations() {
-        System.out.println("Numero de épocas necessárias: " + EPOCH);
+        System.out.println("Numero de épocas necessárias: " + epoch);
         System.out.println("Pesos: " + showWeights());
         System.out.println("Finaliza o treinamento");
         System.out.println("############################################################################################");
@@ -70,9 +75,5 @@ public class Train {
             w += weight + " ";
         }
         return w;
-    }
-
-    public double[] getWeights() {
-        return weights;
     }
 }

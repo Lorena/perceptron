@@ -12,18 +12,6 @@ public class Examples {
         return examples.get(0).getInputLenght();
     }
 
-    public double[] getInput(int index) {
-        return examples.get(index).getInput();
-    }
-
-    public int getLenght() {
-        return examples.size();
-    }
-
-    public int getOutputExampleOfNumber(int i) {
-        return (int) examples.get(i).getOutput();
-    }
-
     public List<Example> get() {
         return examples;
     }
