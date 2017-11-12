@@ -10,6 +10,7 @@ public class PerceptronLogic implements Perceptron {
 
     public PerceptronLogic() {
         TrainLogic train = new TrainLogic();
+        train.config(0.3, 0.2, "sigmoid");
         train.execute();
         weights = train.getWeights();
     }

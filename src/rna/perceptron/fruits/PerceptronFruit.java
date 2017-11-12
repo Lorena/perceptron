@@ -10,6 +10,7 @@ public class PerceptronFruit implements Perceptron{
 
     public PerceptronFruit() {
         TrainFruit train = new TrainFruit();
+        train.config(0, 0.05, "sigmoidBipolar");
         train.execute();
         weights = train.getWeights();
     }
