@@ -4,12 +4,10 @@ public class Example {
 
     private double[] input;
     private double output;
-    private boolean aprendeu;
 
-    public Example(double[] input, double output, boolean treinado) {
+    public Example(double[] input, double output) {
             this.input = input;
             this.output = output;
-            this.aprendeu = treinado;
     }
 
     public Example(double[] input) {
@@ -30,13 +28,5 @@ public class Example {
 
     public double getInputX(int indexInput) {
         return input[indexInput];
-    }
-
-    public void learned() {
-        aprendeu = true;
-    }
-
-    public boolean isLearned() {
-        return aprendeu;
     }
 }

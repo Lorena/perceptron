@@ -8,14 +8,6 @@ public class Examples {
     private List<Example> examples;
     private boolean hasError;
 
-    public Examples() {
-        examples = new ArrayList<>();
-        examples.add(new Example(new double[]{-1, 0.1, 0.4, 0.7}, 1.0, false));
-        examples.add(new Example(new double[]{-1, 0.3, 0.7, 0.2}, -1.0, false));
-        examples.add(new Example(new double[]{-1, 0.6, 0.9, 0.8}, -1.0, false));
-        examples.add(new Example(new double[]{-1, 0.5, 0.7, 0.1}, 1.0, false));
-    }
-
     public int getInputLenght() {
         return examples.get(0).getInputLenght();
     }
@@ -36,15 +28,6 @@ public class Examples {
         return examples;
     }
 
-    public boolean allLeanerd() {
-        for (Example example : examples) {
-            if (!example.isLearned()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public boolean hasError(){
         return hasError;
     }
@@ -55,5 +38,29 @@ public class Examples {
 
     public void noExistError() {
         hasError = false;
+    }
+
+    public void loadInfoFruit() {
+        examples = new ArrayList<>();
+        examples.add(new Example(new double[]{-1, 0.1, 0.4, 0.7}, 1.0));
+        examples.add(new Example(new double[]{-1, 0.3, 0.7, 0.2}, -1.0));
+        examples.add(new Example(new double[]{-1, 0.6, 0.9, 0.8}, -1.0));
+        examples.add(new Example(new double[]{-1, 0.5, 0.7, 0.1}, 1.0));
+    }
+
+    public void loadAndLogicOperator() {
+        examples = new ArrayList<>();
+        examples.add(new Example(new double[]{0, 0}, 0));
+        examples.add(new Example(new double[]{0, 1}, 0));
+        examples.add(new Example(new double[]{1, 0}, 0));
+        examples.add(new Example(new double[]{1, 1}, 1));
+    }
+
+    public void loadOrLogicOperator() {
+        examples = new ArrayList<>();
+        examples.add(new Example(new double[]{0, 0}, 0));
+        examples.add(new Example(new double[]{0, 1}, 0));
+        examples.add(new Example(new double[]{1, 0}, 0));
+        examples.add(new Example(new double[]{1, 1}, 1));
     }
 }

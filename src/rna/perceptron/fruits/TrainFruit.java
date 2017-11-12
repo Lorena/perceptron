@@ -17,6 +17,7 @@ public class TrainFruit {
 
     public TrainFruit() {
         examples = new Examples();
+        examples.loadInfoFruit();
     }
 
     public void execute() {
@@ -25,14 +26,14 @@ public class TrainFruit {
 
         do {
             examples.noExistError();
-            xkResultIsEqualExpected();
+            adjustTheCorrectWeights();
             EPOCH++;
         } while (examples.hasError());
 
         showInformations();
     }
 
-    private void xkResultIsEqualExpected() {
+    private void adjustTheCorrectWeights() {
         for (Example example : this.examples.get()) {
             activationFunctionResult = activationFunctionOfU(example);
             if (!isActivationFunctionResultEqualsOutputExpected(example)) {
