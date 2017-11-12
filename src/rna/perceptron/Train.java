@@ -11,16 +11,13 @@ public class Train {
 
     private FunctionActivation functionActivation;
     private double LEARNING_RATE;
-    private double THRESHOULD;
 
     protected double activationFunctionResult;
     protected Examples examples;
     protected double[] weights;
 
     public void config(double threshould, double learningRate, String fuctionName) {
-        THRESHOULD = threshould;
         LEARNING_RATE = learningRate;
-
         initializeWeightsRandom();
         functionActivation = new FunctionActivation(fuctionName, threshould, weights);
     }
