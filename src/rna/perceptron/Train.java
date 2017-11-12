@@ -9,7 +9,7 @@ public class Train {
 
     protected static int EPOCH = 0;
 
-    private String FUNCTION_NAME;
+    private FunctionActivation functionActivation;
     private double LEARNING_RATE;
     private double THRESHOULD;
 
@@ -20,12 +20,13 @@ public class Train {
     public void config(double threshould, double learningRate, String fuctionName) {
         THRESHOULD = threshould;
         LEARNING_RATE = learningRate;
-        FUNCTION_NAME = fuctionName;
+
+        initializeWeightsRandom();
+        functionActivation = new FunctionActivation(fuctionName, threshould, weights);
     }
 
     public void execute() {
         System.out.println("Inicia o treinamento");
-        initializeWeightsRandom();
         do {
             examples.noExistError();
             adjustTheCorrectWeights();
@@ -37,35 +38,12 @@ public class Train {
 
     private void adjustTheCorrectWeights() {
         for (Example example : this.examples.get()) {
-            activationFunctionResult = activationFunction(example);
+            activationFunctionResult = functionActivation.result(example);
             if (!isActivationFunctionResultEqualsOutputExpected(example)) {
                 loadNewValueOfWeight(example, LEARNING_RATE);
                 examples.existError();
             }
         }
-    }
-
-    private double activationFunction(Example example) {
-        if("sigmoid".equals(FUNCTION_NAME)){
-            return activationFunctionSigmoid(example);
-        }
-        return activationFunctionSigmoidBipolar(example);
-    }
-
-    private double activationFunctionSigmoid(Example example) {
-        double u = sumOfProductByExample(example);
-        if (u > THRESHOULD) {
-            return 1;
-        }
-        return 0;
-    }
-
-    private double activationFunctionSigmoidBipolar(Example example) {
-        double u = sumOfProductByExample(example);
-        if (u >= THRESHOULD) {
-            return 1;
-        }
-        return -1;
     }
 
     protected void initializeWeightsRandom() {
@@ -74,14 +52,6 @@ public class Train {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = random.nextDouble();
         }
-    }
-
-    protected double sumOfProductByExample(Example example) {
-        double sum = 0.0;
-        for (int i = 0; i < example.getInputLenght(); i++) {
-            sum += example.getInput()[i] * weights[i];
-        }
-        return sum;
     }
 
     protected boolean isActivationFunctionResultEqualsOutputExpected(Example example) {
