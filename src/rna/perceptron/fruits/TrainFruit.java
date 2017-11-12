@@ -2,17 +2,13 @@ package rna.perceptron.fruits;
 
 import rna.Example;
 import rna.Examples;
+import rna.perceptron.Train;
 
-import java.util.Random;
-
-public class TrainFruit {
+public class TrainFruit extends Train {
 
     private static double THRESHOULD = 0;
     private static double LEARNING_RATE = 0.05;
     private static int EPOCH = 0;
-
-    private Examples examples;
-    private double[] weights;
     private double activationFunctionResult;
 
     public TrainFruit() {
@@ -47,22 +43,6 @@ public class TrainFruit {
         return activationFunctionResult == example.getOutput();
     }
 
-    private double activationFunctionOfU(Example example) {
-        double u = sumOfProductXKanWByExemplo(example);
-        if (u >= THRESHOULD) {
-            return 1;
-        }
-        return -1;
-    }
-
-    private double sumOfProductXKanWByExemplo(Example example) {
-        double sum = 0.0;
-        for (int i = 0; i < example.getInputLenght(); i++) {
-            sum += example.getInput()[i] * weights[i];
-        }
-        return sum;
-    }
-
     private void loadNewValueOfWeight(Example exemple) {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = newValueOfWeight(i, exemple);
@@ -73,16 +53,12 @@ public class TrainFruit {
         return weights[i] + LEARNING_RATE * (exemple.getOutput() - activationFunctionResult) * exemple.getInputX(i);
     }
 
-    private void initializeWeightsRandom() {
-        weights = new double[examples.getInputLenght()];
-        Random random = new Random(System.currentTimeMillis());
-        for (int i = 0; i < weights.length; i++) {
-            weights[i] = random.nextDouble();
+    private double activationFunctionOfU(Example example) {
+        double u = sumOfProductByExample(example);
+        if (u >= THRESHOULD) {
+            return 1;
         }
-    }
-
-    public double[] getWeights() {
-        return weights;
+        return -1;
     }
 
     private void showInformations() {

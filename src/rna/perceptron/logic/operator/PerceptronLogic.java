@@ -5,7 +5,7 @@ import rna.Perceptron;
 
 public class PerceptronLogic implements Perceptron {
 
-    private static double THRESHOULD_OPERATOR = 0.3;
+    private static double THRESHOULD = 0.3;
     private double[] weights;
 
     public PerceptronLogic() {
@@ -14,17 +14,24 @@ public class PerceptronLogic implements Perceptron {
         weights = train.getWeights();
     }
 
-    public void learningByPerceptron(Example e) {
+    public void learningByPerceptron(Example example) {
+        activationFunctionOfU(example);
+    }
 
-        double[] example = e.getInput();
-        double sum = 0.0;
-        for(int i=0;i<example.length;i++) {
-            sum += weights[i]*example[i];
-        }
-        System.out.print("Resultado é: ");
-        if(sum> THRESHOULD_OPERATOR)
+    private void activationFunctionOfU(Example example) {
+        double sum = sumOfProductByExemplo(example);
+        if (sum > THRESHOULD) {
             System.out.println("1");
-        else
+        } else {
             System.out.println("0");
+        }
+    }
+
+    private double sumOfProductByExemplo(Example example) {
+        double sum = 0.0;
+        for (int i = 0; i < example.getInputLenght(); i++) {
+            sum += example.getInput()[i] * weights[i];
+        }
+        return sum;
     }
 }

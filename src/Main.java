@@ -8,7 +8,7 @@ public class Main {
 
         Perceptron pl = new PerceptronLogic();
         System.out.println("Executa o aprendizado por Perceptron: ");
-        pl.learningByPerceptron(new Example(new double[]{1, 1}));
+        pl.learningByPerceptron(new Example(new double[]{0, 1}));
         System.out.println("____________________________________________________________________________________________");
         Perceptron pf = new PerceptronFruit();
         System.out.println("Executa o aprendizado por Perceptron: ");
