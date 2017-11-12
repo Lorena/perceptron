@@ -6,7 +6,6 @@ import rna.perceptron.FunctionActivation;
 
 public class PerceptronLogic implements Perceptron {
 
-    private static double THRESHOULD = 0.3;
     private double[] weights;
     private FunctionActivation functionActivation;
 
@@ -15,7 +14,7 @@ public class PerceptronLogic implements Perceptron {
         train.config(0.3, 0.2, "sigmoid");
         train.execute();
         weights = train.getWeights();
-        functionActivation = new FunctionActivation("sigmoid", THRESHOULD, weights);
+        functionActivation = new FunctionActivation("sigmoid", 0.3, weights);
     }
 
     public void learningByPerceptron(Example example) {
