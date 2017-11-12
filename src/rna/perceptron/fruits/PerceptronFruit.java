@@ -19,10 +19,10 @@ public class PerceptronFruit implements Perceptron{
     }
 
     public void learningByPerceptron(Example example) {
-        activationFunction(example);
+        getResponse(example);
     }
 
-    private void activationFunction(Example example) {
+    private void getResponse(Example example) {
         double sum = functionActivation.calcule(example);
         if (sum == 1) {
             System.out.println("Tangerina");

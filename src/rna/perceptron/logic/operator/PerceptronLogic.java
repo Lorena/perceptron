@@ -19,10 +19,10 @@ public class PerceptronLogic implements Perceptron {
     }
 
     public void learningByPerceptron(Example example) {
-        activationFunctionOfU(example);
+        getResponse(example);
     }
 
-    private void activationFunctionOfU(Example example) {
+    private void getResponse(Example example) {
         double sum = functionActivation.calcule(example);
         if (sum == 1) {
             System.out.println("1");

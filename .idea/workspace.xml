@@ -102,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/PerceptronFruit.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="57" />
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,8 +113,8 @@
       <file leaf-file-name="PerceptronLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rna/perceptron/logic/operator/PerceptronLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="330">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,8 +194,8 @@
         <option value="$PROJECT_DIR$/src/rna/perceptron/FunctionActivation.java" />
         <option value="$PROJECT_DIR$/src/rna/Examples.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/Train.java" />
-        <option value="$PROJECT_DIR$/src/rna/perceptron/fruits/PerceptronFruit.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/logic/operator/PerceptronLogic.java" />
+        <option value="$PROJECT_DIR$/src/rna/perceptron/fruits/PerceptronFruit.java" />
       </list>
     </option>
   </component>
@@ -788,12 +788,12 @@
       <workItem from="1509913003067" duration="13652000" />
       <workItem from="1510186877669" duration="646000" />
       <workItem from="1510363420053" duration="29110000" />
-      <workItem from="1510441734230" duration="13328000" />
+      <workItem from="1510441734230" duration="13396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56736000" />
+    <option name="totallyTimeSpent" value="56804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1065,7 +1065,7 @@
     <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/PerceptronFruit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="57" />
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1074,8 +1074,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rna/perceptron/logic/operator/PerceptronLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="330">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
