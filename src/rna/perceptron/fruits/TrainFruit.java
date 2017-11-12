@@ -19,7 +19,6 @@ public class TrainFruit extends Train {
     public void execute() {
         System.out.println("Inicia o treinamento");
         initializeWeightsRandom();
-
         do {
             examples.noExistError();
             adjustTheCorrectWeights();
@@ -31,7 +30,7 @@ public class TrainFruit extends Train {
 
     private void adjustTheCorrectWeights() {
         for (Example example : this.examples.get()) {
-            activationFunctionResult = activationFunctionOfU(example);
+            activationFunctionResult = activationFunction(example);
             if (!isActivationFunctionResultEqualsOutputExpected(example)) {
                 loadNewValueOfWeight(example);
                 examples.existError();
@@ -53,7 +52,7 @@ public class TrainFruit extends Train {
         return weights[i] + LEARNING_RATE * (exemple.getOutput() - activationFunctionResult) * exemple.getInputX(i);
     }
 
-    private double activationFunctionOfU(Example example) {
+    private double activationFunction(Example example) {
         double u = sumOfProductByExample(example);
         if (u >= THRESHOULD) {
             return 1;

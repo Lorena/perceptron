@@ -13,22 +13,35 @@ public class TrainLogic extends Train {
 
     public TrainLogic() {
        examples = new Examples();
-       examples.loadAndLogicOperator();
-//       examples.loadOrLogicOperator();
+//       examples.loadAndLogicOperator();
+       examples.loadOrLogicOperator();
     }
 
     public void execute() {
         System.out.println("Inicia o treinamento");
         initializeWeightsRandom();
 
-        while(EPOCH<200) {
-            for(Example example : examples.get())  {
-                activationFunctionResult = activationFunction(example);
-                loadNewValueOfWeight(example);
-            }
+        do {
+            examples.noExistError();
+            adjustTheCorrectWeights();
             EPOCH++;
-        }
+        } while (examples.hasError());
+
         showInformations();
+    }
+
+    private void adjustTheCorrectWeights() {
+        for (Example example : this.examples.get()) {
+            activationFunctionResult = activationFunction(example);
+            if (!isActivationFunctionResultEqualsOutputExpected(example)) {
+                loadNewValueOfWeight(example);
+                examples.existError();
+            }
+        }
+    }
+
+    private boolean isActivationFunctionResultEqualsOutputExpected(Example example) {
+        return activationFunctionResult == example.getOutput();
     }
 
     private void showInformations() {
