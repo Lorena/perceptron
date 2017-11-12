@@ -59,8 +59,8 @@ public class Examples {
     public void loadOrLogicOperator() {
         examples = new ArrayList<>();
         examples.add(new Example(new double[]{0, 0}, 0));
-        examples.add(new Example(new double[]{0, 1}, 0));
-        examples.add(new Example(new double[]{1, 0}, 0));
+        examples.add(new Example(new double[]{0, 1}, 1));
+        examples.add(new Example(new double[]{1, 0}, 1));
         examples.add(new Example(new double[]{1, 1}, 1));
     }
 }

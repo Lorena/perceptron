@@ -21,18 +21,21 @@ public class TrainLogic extends Train {
         System.out.println("Inicia o treinamento");
         initializeWeightsRandom();
 
-        double errorSum = 0;
         while(EPOCH<200) {
             for(Example example : examples.get())  {
                 activationFunctionResult = activationFunction(example);
-                errorSum += (example.getOutput() - activationFunctionResult);
                 loadNewValueOfWeight(example);
             }
-            if(errorSum == 0)
-                break;
             EPOCH++;
         }
+        showInformations();
+    }
+
+    private void showInformations() {
+        System.out.println("Numero de épocas necessárias: " + EPOCH);
+        System.out.println("Pesos: " + weights[0] + " " + weights[1]);
         System.out.println("Finaliza o treinamento");
+        System.out.println("############################################################################################");
     }
 
     private void loadNewValueOfWeight(Example exemple) {
