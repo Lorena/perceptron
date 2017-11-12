@@ -4,26 +4,32 @@ import rna.Example;
 
 public class FunctionActivation {
 
-    private double THRESHOULD;
+    private double threshould;
     private final String functionName;
     protected double[] weights;
+    private double result;
 
     public FunctionActivation(String functionName, double threshould, double[] weights) {
         this.functionName = functionName;
-        this.THRESHOULD = threshould;
+        this.threshould = threshould;
         this.weights = weights;
     }
 
-    public double result(Example example) {
+    public double calcule(Example example) {
         if("sigmoid".equals(functionName)){
-            return activationFunctionSigmoid(example);
+            return result = activationFunctionSigmoid(example);
+
         }
-        return activationFunctionSigmoidBipolar(example);
+        return result = activationFunctionSigmoidBipolar(example);
+    }
+
+    public boolean isEqualsOutputExpected(Example example) {
+        return result == example.getOutput();
     }
 
     private double activationFunctionSigmoid(Example example) {
         double u = sumOfProductByExample(example);
-        if (u > THRESHOULD) {
+        if (u > threshould) {
             return 1;
         }
         return 0;
@@ -31,13 +37,13 @@ public class FunctionActivation {
 
     private double activationFunctionSigmoidBipolar(Example example) {
         double u = sumOfProductByExample(example);
-        if (u >= THRESHOULD) {
+        if (u >= threshould) {
             return 1;
         }
         return -1;
     }
 
-    protected double sumOfProductByExample(Example example) {
+    private double sumOfProductByExample(Example example) {
         double sum = 0.0;
         for (int i = 0; i < example.getInputLenght(); i++) {
             sum += example.getInput()[i] * weights[i];

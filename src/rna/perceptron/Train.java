@@ -35,8 +35,8 @@ public class Train {
 
     private void adjustTheCorrectWeights() {
         for (Example example : this.examples.get()) {
-            activationFunctionResult = functionActivation.result(example);
-            if (!isActivationFunctionResultEqualsOutputExpected(example)) {
+            activationFunctionResult = functionActivation.calcule(example);
+            if (!functionActivation.isEqualsOutputExpected(example)) {
                 loadNewValueOfWeight(example, LEARNING_RATE);
                 examples.existError();
             }
@@ -49,10 +49,6 @@ public class Train {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = random.nextDouble();
         }
-    }
-
-    protected boolean isActivationFunctionResultEqualsOutputExpected(Example example) {
-        return activationFunctionResult == example.getOutput();
     }
 
     protected void loadNewValueOfWeight(Example exemple, double learningRate) {
