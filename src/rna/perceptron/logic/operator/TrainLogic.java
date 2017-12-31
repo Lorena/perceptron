@@ -12,8 +12,8 @@ public class TrainLogic extends Train {
 
     public TrainLogic() {
         examples = new ExamplesOfLogicOperator("or");
-        Weights weights = new Weights(examples.getInputLenght());
-        activationFunction = new ActivationFunction(SIGMOID_FUNCTION, THRESHOULD, weights.get());
-        execute(LEARNING_RATE, weights.get());
+        weights = new Weights(examples.getInputLenght());
+        activationFunction = new ActivationFunction(SIGMOID_FUNCTION, THRESHOULD, weights);
+        train(LEARNING_RATE);
     }
 }

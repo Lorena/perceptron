@@ -1,5 +1,7 @@
 package rna.perceptron;
 
+import rna.Example;
+
 import java.util.Random;
 
 public class Weights {
@@ -12,6 +14,20 @@ public class Weights {
 
     public double[] get() {
         return weights;
+    }
+
+    public String show() {
+        String w = "";
+        for(double weight : weights) {
+            w += weight + " ";
+        }
+        return w;
+    }
+
+    public void loadNewValues(Example exemple, double learningRate, double activationFunctionResult) {
+        for (int i = 0; i < weights.length; i++) {
+            weights[i] = weights[i] + learningRate * (exemple.getOutput() - activationFunctionResult) * exemple.getInputX(i);
+        }
     }
 
     private void initializeWeightsRandom(int weightNumber) {

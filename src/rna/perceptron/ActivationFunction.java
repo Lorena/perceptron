@@ -8,10 +8,10 @@ public class ActivationFunction {
 
     private double threshould;
     private final String functionName;
-    protected double[] weights;
+    private Weights weights;
     private double result;
 
-    public ActivationFunction(String functionName, double threshould, double[] weights) {
+    public ActivationFunction(String functionName, double threshould, Weights weights) {
         this.functionName = functionName;
         this.threshould = threshould;
         this.weights = weights;
@@ -66,7 +66,7 @@ public class ActivationFunction {
     private double sumOfProductByExample(Example example) {
         double sum = 0.0;
         for (int i = 0; i < example.getInputLenght(); i++) {
-            sum += example.getInput()[i] * weights[i];
+            sum += example.getInput()[i] * weights.get()[i];
         }
         return sum;
     }

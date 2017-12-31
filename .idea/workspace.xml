@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c298efc0-b67e-4613-9144-e078a71ab47a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/rna/perceptron/Weights.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Perceptron/branquinho/PerceptronOperation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Perceptron/branquinho/PerceptronTraining.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/FunctionActivation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/fruits/PerceptronFruit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/logic/operator/PerceptronLogic.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/Train.class" afterPath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/Train.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/fruits/TrainFruit.class" afterPath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/fruits/TrainFruit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/logic/operator/TrainLogic.class" afterPath="$PROJECT_DIR$/out/production/Perceptron/rna/perceptron/logic/operator/TrainLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rna/perceptron/ActivationFunction.java" afterPath="$PROJECT_DIR$/src/rna/perceptron/ActivationFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rna/perceptron/Train.java" afterPath="$PROJECT_DIR$/src/rna/perceptron/Train.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rna/perceptron/Weights.java" afterPath="$PROJECT_DIR$/src/rna/perceptron/Weights.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rna/perceptron/fruits/TrainFruit.java" afterPath="$PROJECT_DIR$/src/rna/perceptron/fruits/TrainFruit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rna/perceptron/logic/operator/TrainLogic.java" afterPath="$PROJECT_DIR$/src/rna/perceptron/logic/operator/TrainLogic.java" />
     </list>
@@ -39,18 +31,28 @@
       <file leaf-file-name="TrainFruit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/TrainFruit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="210">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainLogic.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NeuronLearningCompositeChemicalOfFruit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/NeuronLearningCompositeChemicalOfFruit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="20" column="89" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrainLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rna/perceptron/logic/operator/TrainLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,12 +60,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Train.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Train.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rna/perceptron/Train.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="225">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding>
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#341#342#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Weights.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/rna/perceptron/Weights.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#158#159#0" expanded="true" />
+                <element signature="e#205#206#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,16 +164,16 @@
         <option value="$PROJECT_DIR$/src/rna/Perceptron.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/activationFunction.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/rna/perceptron/ActivationFunction.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/logic/operator/NeuronLearningLogicOperator.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/fruits/NeuronLearningCompositeChemicalOfFruit.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/logic/operator/ExamplesOfLogicOperator.java" />
         <option value="$PROJECT_DIR$/src/rna/Examples.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/fruits/ExamplesOfFruit.java" />
-        <option value="$PROJECT_DIR$/src/rna/perceptron/Train.java" />
+        <option value="$PROJECT_DIR$/src/rna/perceptron/Weights.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/fruits/TrainFruit.java" />
         <option value="$PROJECT_DIR$/src/rna/perceptron/logic/operator/TrainLogic.java" />
-        <option value="$PROJECT_DIR$/src/rna/perceptron/Weights.java" />
+        <option value="$PROJECT_DIR$/src/rna/perceptron/ActivationFunction.java" />
+        <option value="$PROJECT_DIR$/src/rna/perceptron/Train.java" />
       </list>
     </option>
   </component>
@@ -751,12 +770,12 @@
       <workItem from="1510363420053" duration="29110000" />
       <workItem from="1510441734230" duration="14263000" />
       <workItem from="1510517266818" duration="6044000" />
-      <workItem from="1514671246509" duration="7951000" />
+      <workItem from="1514671246509" duration="9711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71666000" />
+    <option name="totallyTimeSpent" value="73426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -778,7 +797,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2630137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -845,10 +864,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding>
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -890,10 +906,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -993,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/ActivationFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rna/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1015,17 +1020,6 @@
           <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/NeuronLearningCompositeChemicalOfFruit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1072,41 +1066,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/Train.java">
+    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/TrainFruit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="210">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/TrainFruit.java">
+    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/fruits/NeuronLearningCompositeChemicalOfFruit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="240">
+          <caret line="20" column="89" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rna/perceptron/Weights.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="e#137#138#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/ActivationFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="68" column="50" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rna/perceptron/logic/operator/TrainLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rna/perceptron/Train.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
           </folding>
         </state>
       </provider>

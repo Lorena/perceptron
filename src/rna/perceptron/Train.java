@@ -3,27 +3,22 @@ package rna.perceptron;
 import rna.Example;
 import rna.Examples;
 
-import java.util.Random;
-
 public class Train {
 
     protected static double LEARNING_RATE;
 
-    protected double activationFunctionResult;
-    protected double[] weights;
+    protected Examples examples;
+    protected Weights weights;
     protected ActivationFunction activationFunction;
 
     private int epoch = 0;
 
-    protected Examples examples;
-
-    public double[] getWeights() {
+    public Weights getWeights() {
         return weights;
     }
 
-    protected void execute(double learningRate, double[] weights) {
+    protected void train(double learningRate) {
         LEARNING_RATE = learningRate;
-        this.weights = weights;
         System.out.println("Inicia o treinamento");
         do {
             examples.noExistError();
@@ -31,45 +26,23 @@ public class Train {
             epoch++;
         } while (examples.hasError());
 
-        showInformations();
-    }
-
-    protected void initializeWeightsRandom(int weightNumber) {
-        weights = new double[weightNumber];
-        Random random = new Random(System.currentTimeMillis());
-        for (int i = 0; i < weights.length; i++) {
-            weights[i] = random.nextDouble();
-        }
+        showInformationsTrain();
     }
 
     private void adjustTheCorrectWeights() {
         for (Example example : this.examples.get()) {
-            activationFunctionResult = activationFunction.calcule(example);
+            double activationFunctionResult = activationFunction.calcule(example);
             if (!activationFunction.isEqualsOutputExpected(example)) {
-                loadNewValueOfWeight(example, LEARNING_RATE);
+                weights.loadNewValues(example, LEARNING_RATE, activationFunctionResult);
                 examples.existError();
             }
         }
     }
 
-    private void loadNewValueOfWeight(Example exemple, double learningRate) {
-        for (int i = 0; i < weights.length; i++) {
-            weights[i] = weights[i] + learningRate * (exemple.getOutput() - activationFunctionResult) * exemple.getInputX(i);
-        }
-    }
-
-    private void showInformations() {
+    private void showInformationsTrain() {
         System.out.println("Numero de épocas necessárias: " + epoch);
-        System.out.println("Pesos: " + showWeights());
+        System.out.println("Pesos: " + weights.show());
         System.out.println("Finaliza o treinamento");
         System.out.println("############################################################################################");
-    }
-
-    private String showWeights() {
-        String w = "";
-        for(double weight : weights) {
-            w += weight + " ";
-        }
-        return w;
     }
 }
