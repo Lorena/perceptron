@@ -17,13 +17,7 @@ public class Train {
 
     protected Examples examples;
 
-    public void config(double threshould, double learningRate, String fuctionName) {
-        LEARNING_RATE = learningRate;
-        initializeWeightsRandom();
-        activationFunction = new ActivationFunction(fuctionName, threshould, weights);
-    }
-
-    public void execute() {
+    protected void execute() {
         System.out.println("Inicia o treinamento");
         do {
             examples.noExistError();

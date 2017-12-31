@@ -13,7 +13,6 @@ public class NeuronLearningCompositeChemicalOfFruit implements Perceptron{
     @Override
     public void trainingByExamples() {
         train = new TrainFruit(0, 0.05, SIGMOID_BIPOLAR_FUNCTION);
-        train.execute();
     }
 
     @Override

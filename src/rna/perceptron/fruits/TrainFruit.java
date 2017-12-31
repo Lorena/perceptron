@@ -14,5 +14,7 @@ public class TrainFruit extends Train {
         LEARNING_RATE = learningRate;
         initializeWeightsRandom();
         activationFunction = new ActivationFunction(fuctionName, threshould, weights);
+
+        execute();
     }
 }

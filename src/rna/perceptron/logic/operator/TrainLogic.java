@@ -8,11 +8,12 @@ public class TrainLogic extends Train {
 
     public TrainLogic(double threshould, double learningRate, String fuctionName) {
         examples = new Examples();
-//       examples.loadAndLogicOperatorForTrain();
         examples.loadOrLogicOperatorForTrain();
 
         LEARNING_RATE = learningRate;
         initializeWeightsRandom();
         activationFunction = new ActivationFunction(fuctionName, threshould, weights);
+
+        execute();
     }
 }

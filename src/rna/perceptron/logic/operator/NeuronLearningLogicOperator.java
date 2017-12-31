@@ -13,7 +13,6 @@ public class NeuronLearningLogicOperator implements Perceptron {
     @Override
     public void trainingByExamples() {
         train = new TrainLogic(0.3, 0.2, SIGMOID_FUNCTION);
-        train.execute();
     }
 
     @Override
