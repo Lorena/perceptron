@@ -1,6 +1,7 @@
 package rna.perceptron;
 
 import rna.Examples;
+import rna.perceptron.actvation.function.ActivationFunction;
 
 public class Train {
 

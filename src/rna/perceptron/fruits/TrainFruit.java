@@ -1,7 +1,7 @@
 package rna.perceptron.fruits;
 
 import rna.Examples;
-import rna.perceptron.ActivationFunction;
+import rna.perceptron.actvation.function.ActivationFunction;
 import rna.perceptron.Train;
 import rna.perceptron.Weights;
 
@@ -14,7 +14,7 @@ public class TrainFruit extends Train {
     public TrainFruit() {
         Examples examples = new ExamplesOfFruit();
         activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, THRESHOULD);
-        Weights weights = new Weights(examples.lenght(), activationFunction, LEARNING_RATE);
+        Weights weights = new Weights(examples.inputLenght(), activationFunction, LEARNING_RATE);
         train(examples, weights);
     }
 }

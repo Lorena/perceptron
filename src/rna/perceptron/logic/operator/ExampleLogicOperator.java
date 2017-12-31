@@ -12,8 +12,8 @@ public class ExampleLogicOperator extends Example {
         super(input);
     }
 
-    public void getOutputLogicLearned(Train train) {
+    public void getOutputLearned(Train train) {
         double sum = train.getActivationFunction().calculateByExampleAndWeights(this, train.getWeightsTrained());
-        outputObject.getOutputFruitLearned(sum);
+        output.getLearned(sum, "operatorLogic");
     }
 }

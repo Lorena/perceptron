@@ -16,8 +16,8 @@ public class ExampleFruit extends Example {
         super(input);
     }
 
-    public void getOutputFruitLearned(Train train) {
+    public void getOutputLearned(Train train) {
         double sum = train.getActivationFunction().calculateByExampleAndWeights(this, train.getWeightsTrained());
-        outputObject.getOutputFruitLearned(sum);
+        output.getLearned(sum, "Fruit");
     }
 }

@@ -13,7 +13,7 @@ public class NeuronLearningCompositeChemicalOfFruit implements Perceptron{
 
     public void learningAnExample(ExampleFruit example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
-        example.getOutputFruitLearned(trainedNeuron);
+        example.getOutputLearned(trainedNeuron);
         System.out.println("Expected: " + expected);
         System.out.println("____");
     }

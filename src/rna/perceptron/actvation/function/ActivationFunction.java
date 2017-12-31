@@ -1,6 +1,7 @@
-package rna.perceptron;
+package rna.perceptron.actvation.function;
 
 import rna.Example;
+import rna.perceptron.Weights;
 
 public class ActivationFunction {
 
@@ -42,8 +43,8 @@ public class ActivationFunction {
 
     private double sumOfProductInputExampleAndWeightByExample(Example example) {
         double sum = 0.0;
-        for (int i = 0; i < example.getInputLenght(); i++) {
-            sum += example.getInput()[i] * weights.get()[i];
+        for (int i = 0; i < example.inputLenght(); i++) {
+            sum += example.inputs()[i] * weights.get()[i];
         }
         return sum;
     }

@@ -1,7 +1,7 @@
 package rna.perceptron.logic.operator;
 
 import rna.Examples;
-import rna.perceptron.ActivationFunction;
+import rna.perceptron.actvation.function.ActivationFunction;
 import rna.perceptron.Train;
 import rna.perceptron.Weights;
 
@@ -15,7 +15,7 @@ public class TrainLogic extends Train {
     public TrainLogic() {
         Examples examples = new ExamplesOfLogicOperator("or");
         activationFunction = new ActivationFunction(SIGMOID_FUNCTION, THRESHOULD);
-        Weights weightsRandon = new Weights(examples.lenght(), activationFunction, LEARNING_RATE);
+        Weights weightsRandon = new Weights(examples.inputLenght(), activationFunction, LEARNING_RATE);
         train(examples, weightsRandon);
     }
 

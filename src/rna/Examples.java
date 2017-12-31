@@ -23,8 +23,8 @@ public class Examples {
         hasError = false;
     }
 
-    public int lenght() {
-        return examples.get(0).getInputLenght();
+    public int inputLenght() {
+        return examples.get(0).inputLenght();
     }
 
 }

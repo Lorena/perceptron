@@ -15,7 +15,15 @@ public class Output {
         return result == output;
     }
 
-    public void getOutputFruitLearned(double sum) {
+    public void getLearned(double sum, String problem) {
+        if ("Fruit".equals(problem)) {
+            getOutputFruitLearned(sum);
+        } else  {
+            getOutputLogicLearned(sum);
+        }
+    }
+
+    private void getOutputFruitLearned(double sum) {
         if (sum == 1) {
             System.out.println("Resulted: " + "Tangerina");
         } else {
@@ -23,7 +31,7 @@ public class Output {
         }
     }
 
-    public void getOutputLogicLearned(double sum) {
+    private void getOutputLogicLearned(double sum) {
         if (sum == 1) {
             System.out.println("Resulted: " + "1");
         } else {

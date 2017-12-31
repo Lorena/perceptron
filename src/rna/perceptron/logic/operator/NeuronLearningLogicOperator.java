@@ -13,7 +13,7 @@ public class NeuronLearningLogicOperator implements Perceptron {
 
     public void learningAnExample(ExampleLogicOperator example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
-        example.getOutputLogicLearned(trainedNeuron);
+        example.getOutputLearned(trainedNeuron);
         System.out.println("Expected: " + expected);
         System.out.println("_____");
     }

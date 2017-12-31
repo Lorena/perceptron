@@ -3,32 +3,32 @@ package rna;
 public class Example {
 
     private double[] input;
-    protected Output outputObject;
+    protected Output output;
 
     public Example(double[] input, double output) {
         this.input = input;
-        this.outputObject = new Output(output);
+        this.output = new Output(output);
     }
 
     public Example(double[] input) {
         this.input = input;
-        this.outputObject = new Output();
+        this.output = new Output();
     }
 
-    public int getInputLenght() {
-        return input.length;
-    }
-
-    public double[] getInput() {
+    public double[] inputs() {
         return input;
     }
 
-    public double getInput(int indexInput) {
+    public double input(int indexInput) {
         return input[indexInput];
     }
 
-    public Output getOutput() {
-        return outputObject;
+    public int inputLenght() {
+        return input.length;
+    }
+
+    public Output output() {
+        return output;
     }
 
 }
