@@ -1,19 +1,21 @@
 package rna.perceptron.logic.operator;
 
-import rna.Examples;
 import rna.perceptron.ActivationFunction;
 import rna.perceptron.Train;
 
 public class TrainLogic extends Train {
 
-    public TrainLogic(double threshould, double learningRate, String fuctionName) {
-        examples = new Examples();
-        examples.loadOrLogicOperatorForTrain();
+    private final String SIGMOID_FUNCTION = "SIGMOID";
+    private static double LEARNING_RATE = 0.2;
+    private static double THRESHOULD = 0.3;
 
-        LEARNING_RATE = learningRate;
+
+    public TrainLogic() {
+        examples = new ExamplesOfLogicOperator("or");
+
         initializeWeightsRandom();
-        activationFunction = new ActivationFunction(fuctionName, threshould, weights);
+        activationFunction = new ActivationFunction(SIGMOID_FUNCTION, THRESHOULD, weights);
 
-        execute();
+        execute(LEARNING_RATE);
     }
 }

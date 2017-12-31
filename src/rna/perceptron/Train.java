@@ -17,7 +17,12 @@ public class Train {
 
     protected Examples examples;
 
-    protected void execute() {
+    public double[] getWeights() {
+        return weights;
+    }
+
+    protected void execute(double learningRate) {
+        LEARNING_RATE = learningRate;
         System.out.println("Inicia o treinamento");
         do {
             examples.noExistError();
@@ -28,8 +33,12 @@ public class Train {
         showInformations();
     }
 
-    public double[] getWeights() {
-        return weights;
+    protected void initializeWeightsRandom() {
+        weights = new double[examples.getInputLenght()];
+        Random random = new Random(System.currentTimeMillis());
+        for (int i = 0; i < weights.length; i++) {
+            weights[i] = random.nextDouble();
+        }
     }
 
     private void adjustTheCorrectWeights() {
@@ -42,21 +51,13 @@ public class Train {
         }
     }
 
-    protected void initializeWeightsRandom() {
-        weights = new double[examples.getInputLenght()];
-        Random random = new Random(System.currentTimeMillis());
-        for (int i = 0; i < weights.length; i++) {
-            weights[i] = random.nextDouble();
-        }
-    }
-
-    protected void loadNewValueOfWeight(Example exemple, double learningRate) {
+    private void loadNewValueOfWeight(Example exemple, double learningRate) {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = weights[i] + learningRate * (exemple.getOutput() - activationFunctionResult) * exemple.getInputX(i);
         }
     }
 
-    protected void showInformations() {
+    private void showInformations() {
         System.out.println("Numero de épocas necessárias: " + epoch);
         System.out.println("Pesos: " + showWeights());
         System.out.println("Finaliza o treinamento");

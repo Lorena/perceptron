@@ -1,20 +1,20 @@
 package rna.perceptron.fruits;
 
-import rna.Examples;
 import rna.perceptron.ActivationFunction;
 import rna.perceptron.Train;
 
 public class TrainFruit extends Train {
 
-    public TrainFruit(int threshould, double learningRate, String fuctionName) {
+    private final String SIGMOID_BIPOLAR_FUNCTION = "SIGMOID_BIPOLAR";
+    private static double LEARNING_RATE = 0.05;
+    private static double THRESHOULD = 0.0;
 
-        examples = new Examples();
-        examples.loadInfoFruitForTrain();
+    public TrainFruit() {
 
-        LEARNING_RATE = learningRate;
+        examples = new ExamplesOfFruit();
         initializeWeightsRandom();
-        activationFunction = new ActivationFunction(fuctionName, threshould, weights);
+        activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, THRESHOULD, weights);
 
-        execute();
+        execute(LEARNING_RATE);
     }
 }
