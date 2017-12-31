@@ -18,8 +18,8 @@ public class NeuronLearningLogicOperator implements Perceptron {
     @Override
     public void learningAnExample(Example example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
-        activationFunction = new ActivationFunction(SIGMOID_FUNCTION, 0.3, train.getWeights());
-        activationFunction.getResulted(example);
+        activationFunction = new ActivationFunction(SIGMOID_FUNCTION, 0.3);
+        example.getOutputLogicLearned(activationFunction, train.getWeights());
         System.out.println("Expected: " + expected);
         System.out.println("_____");
     }

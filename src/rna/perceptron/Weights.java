@@ -17,6 +17,10 @@ public class Weights {
         this.learningRate = learningRate;
     }
 
+    public double[] get() {
+        return weights;
+    }
+
     public String show() {
         String w = "";
         for(double weight : weights) {
@@ -27,7 +31,7 @@ public class Weights {
 
     public void adjustWeightsAsExpectedExampleResult(Examples examples) {
         for (Example example : examples.get()) {
-            double activationFunctionResult = activationFunction.calcule(example, weights);
+            double activationFunctionResult = activationFunction.calculateByExampleAndWeights(example, weights);
             if (!example.isEqualsOutput(activationFunctionResult)) {
                 loadNewValues(example, activationFunctionResult);
                 examples.existError();
@@ -47,9 +51,5 @@ public class Weights {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = random.nextDouble();
         }
-    }
-
-    public double[] get() {
-        return weights;
     }
 }

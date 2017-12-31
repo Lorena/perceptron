@@ -1,5 +1,8 @@
 package rna;
 
+import rna.perceptron.ActivationFunction;
+import rna.perceptron.Weights;
+
 public class Example {
 
     private String classType;
@@ -39,5 +42,23 @@ public class Example {
 
     public boolean isEqualsOutput(double result) {
         return result == output;
+    }
+
+    public void getOutputFruitLearned(ActivationFunction activationFunction, Weights weights) {
+        double sum = activationFunction.calculateByExampleAndWeights(this, weights.get());
+        if (sum == 1) {
+            System.out.println("Resulted: " + "Tangerina");
+        } else {
+            System.out.println("Resulted: " + "Laranja");
+        }
+    }
+
+    public void getOutputLogicLearned(ActivationFunction activationFunction, Weights weights) {
+        double sum = activationFunction.calculateByExampleAndWeights(this, weights.get());
+        if (sum == 1) {
+            System.out.println("Resulted: " + "1");
+        } else {
+            System.out.println("Resulted: " + "0");
+        }
     }
 }

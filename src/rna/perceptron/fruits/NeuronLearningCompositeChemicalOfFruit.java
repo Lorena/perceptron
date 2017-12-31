@@ -18,8 +18,8 @@ public class NeuronLearningCompositeChemicalOfFruit implements Perceptron{
     @Override
     public void learningAnExample(Example example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
-        activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, 0.0, train.getWeights());
-        activationFunction.getResultedFruit(example);
+        activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, 0.0);
+        example.getOutputFruitLearned(activationFunction, train.getWeights());
         System.out.println("Expected: " + expected);
         System.out.println("____");
     }
