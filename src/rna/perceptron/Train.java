@@ -7,11 +7,11 @@ import java.util.Random;
 
 public class Train {
 
-    private static double LEARNING_RATE;
+    protected static double LEARNING_RATE;
 
-    private double activationFunctionResult;
-    private double[] weights;
-    private FunctionActivation functionActivation;
+    protected double activationFunctionResult;
+    protected double[] weights;
+    protected ActivationFunction activationFunction;
 
     private int epoch = 0;
 
@@ -20,7 +20,7 @@ public class Train {
     public void config(double threshould, double learningRate, String fuctionName) {
         LEARNING_RATE = learningRate;
         initializeWeightsRandom();
-        functionActivation = new FunctionActivation(fuctionName, threshould, weights);
+        activationFunction = new ActivationFunction(fuctionName, threshould, weights);
     }
 
     public void execute() {
@@ -40,8 +40,8 @@ public class Train {
 
     private void adjustTheCorrectWeights() {
         for (Example example : this.examples.get()) {
-            activationFunctionResult = functionActivation.calcule(example);
-            if (!functionActivation.isEqualsOutputExpected(example)) {
+            activationFunctionResult = activationFunction.calcule(example);
+            if (!activationFunction.isEqualsOutputExpected(example)) {
                 loadNewValueOfWeight(example, LEARNING_RATE);
                 examples.existError();
             }

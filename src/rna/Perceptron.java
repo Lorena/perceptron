@@ -1,5 +1,6 @@
 package rna;
 
 public interface Perceptron {
-    void learningByPerceptron(Example example);
+    void learningAnExample(Example example, String expected);
+    void trainingByExamples();
 }

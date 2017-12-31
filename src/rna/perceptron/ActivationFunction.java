@@ -2,21 +2,41 @@ package rna.perceptron;
 
 import rna.Example;
 
-public class FunctionActivation {
+public class ActivationFunction {
+
+    private final String SIGMOID = "SIGMOID";
 
     private double threshould;
     private final String functionName;
     protected double[] weights;
     private double result;
 
-    public FunctionActivation(String functionName, double threshould, double[] weights) {
+    public ActivationFunction(String functionName, double threshould, double[] weights) {
         this.functionName = functionName;
         this.threshould = threshould;
         this.weights = weights;
     }
 
+    public void getResultedFruit(Example example) {
+        double sum = calcule(example);
+        if (sum == 1) {
+            System.out.println("Resulted: " + "Tangerina");
+        } else {
+            System.out.println("Resulted: " + "Laranja");
+        }
+    }
+
+    public void getResulted(Example example) {
+        double sum = calcule(example);
+        if (sum == 1) {
+            System.out.println("Resulted: " + "1");
+        } else {
+            System.out.println("Resulted: " + "0");
+        }
+    }
+
     public double calcule(Example example) {
-        if("sigmoid".equals(functionName)){
+        if(SIGMOID.equals(functionName)){
             return result = activationFunctionSigmoid(example);
 
         }

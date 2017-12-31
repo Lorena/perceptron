@@ -2,6 +2,7 @@ package rna;
 
 public class Example {
 
+    private String classType;
     private double[] input;
     private double output;
 
@@ -12,6 +13,12 @@ public class Example {
 
     public Example(double[] input) {
         this.input = input;
+    }
+
+    public Example(double[] input, double output, String classType) {
+        this.input = input;
+        this.output = output;
+        this.classType = classType;
     }
 
     public int getInputLenght() {
