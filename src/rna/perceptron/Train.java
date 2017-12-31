@@ -7,7 +7,7 @@ public class Train {
     private Weights weights;
     private int epoch = 0;
 
-    public Weights getWeights() {
+    public Weights getWeightsTrained() {
         return weights;
     }
 

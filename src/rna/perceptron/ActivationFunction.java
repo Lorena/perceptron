@@ -8,14 +8,14 @@ public class ActivationFunction {
 
     private double threshould;
     private final String functionName;
-    private double[] weights;
+    private Weights weights;
 
     public ActivationFunction(String functionName, double threshould) {
         this.functionName = functionName;
         this.threshould = threshould;
     }
 
-    public double calculateByExampleAndWeights(Example example, double[] weights) {
+    public double calculateByExampleAndWeights(Example example, Weights weights) {
         this.weights = weights;
         if(SIGMOID.equals(functionName)){
             return activationFunctionSigmoid(example);
@@ -25,7 +25,7 @@ public class ActivationFunction {
     }
 
     private double activationFunctionSigmoid(Example example) {
-        double u = sumOfProductByExample(example);
+        double u = sumOfProductInputExampleAndWeightByExample(example);
         if (u > threshould) {
             return 1;
         }
@@ -33,17 +33,17 @@ public class ActivationFunction {
     }
 
     private double activationFunctionSigmoidBipolar(Example example) {
-        double u = sumOfProductByExample(example);
+        double u = sumOfProductInputExampleAndWeightByExample(example);
         if (u >= threshould) {
             return 1;
         }
         return -1;
     }
 
-    private double sumOfProductByExample(Example example) {
+    private double sumOfProductInputExampleAndWeightByExample(Example example) {
         double sum = 0.0;
         for (int i = 0; i < example.getInputLenght(); i++) {
-            sum += example.getInput()[i] * weights[i];
+            sum += example.getInput()[i] * weights.get()[i];
         }
         return sum;
     }

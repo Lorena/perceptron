@@ -2,24 +2,20 @@ package rna.perceptron.logic.operator;
 
 import rna.Example;
 import rna.Perceptron;
-import rna.perceptron.ActivationFunction;
 
 public class NeuronLearningLogicOperator implements Perceptron {
 
-    private final String SIGMOID_FUNCTION = "SIGMOID";
-    private ActivationFunction activationFunction;
-    private TrainLogic train;
+    private TrainLogic trainedNeuron;
 
     @Override
     public void trainingByExamples() {
-        train = new TrainLogic();
+        trainedNeuron = new TrainLogic();
     }
 
     @Override
     public void learningAnExample(Example example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
-        activationFunction = new ActivationFunction(SIGMOID_FUNCTION, 0.3);
-        example.getOutputLogicLearned(activationFunction, train.getWeights());
+        example.getOutputLogicLearned(trainedNeuron);
         System.out.println("Expected: " + expected);
         System.out.println("_____");
     }

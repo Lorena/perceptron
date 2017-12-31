@@ -31,7 +31,7 @@ public class Weights {
 
     public void adjustWeightsAsExpectedExampleResult(Examples examples) {
         for (Example example : examples.get()) {
-            double activationFunctionResult = activationFunction.calculateByExampleAndWeights(example, weights);
+            double activationFunctionResult = activationFunction.calculateByExampleAndWeights(example, this);
             if (!example.isEqualsOutput(activationFunctionResult)) {
                 loadNewValues(example, activationFunctionResult);
                 examples.existError();

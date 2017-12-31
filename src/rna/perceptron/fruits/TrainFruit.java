@@ -10,11 +10,16 @@ public class TrainFruit extends Train {
     private final String SIGMOID_BIPOLAR_FUNCTION = "SIGMOID_BIPOLAR";
     private final static double LEARNING_RATE = 0.05;
     private final static double THRESHOULD = 0.0;
+    private final ActivationFunction activationFunction;
 
     public TrainFruit() {
         Examples examples = new ExamplesOfFruit();
-        ActivationFunction activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, THRESHOULD);
+        activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, THRESHOULD);
         Weights weights = new Weights(examples.lenght(), activationFunction, LEARNING_RATE);
         train(examples, weights);
+    }
+
+    public ActivationFunction getActivationFunction() {
+        return activationFunction;
     }
 }
