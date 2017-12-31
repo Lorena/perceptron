@@ -5,8 +5,6 @@ import rna.perceptron.Train;
 
 public class ExampleFruit extends Example {
 
-    private String classType;
-
     public ExampleFruit(double[] input, double output, String classType) {
         super(input, output);
         this.classType = classType;

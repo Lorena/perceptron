@@ -4,6 +4,7 @@ public class Example {
 
     private double[] input;
     protected Output output;
+    protected String classType;
 
     public Example(double[] input, double output) {
         this.input = input;

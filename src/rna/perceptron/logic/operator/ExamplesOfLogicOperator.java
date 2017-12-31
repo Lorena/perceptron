@@ -13,7 +13,7 @@ public class ExamplesOfLogicOperator extends rna.Examples {
         }
     }
 
-    public void loadAndLogicOperatorForTrain() {
+    private void loadAndLogicOperatorForTrain() {
         examples = new ArrayList<>();
         examples.add(new ExampleLogicOperator(new double[]{0, 0}, 0));
         examples.add(new ExampleLogicOperator(new double[]{0, 1}, 0));
@@ -21,7 +21,7 @@ public class ExamplesOfLogicOperator extends rna.Examples {
         examples.add(new ExampleLogicOperator(new double[]{1, 1}, 1));
     }
 
-    public void loadOrLogicOperatorForTrain() {
+    private void loadOrLogicOperatorForTrain() {
         examples = new ArrayList<>();
         examples.add(new ExampleLogicOperator(new double[]{0, 0}, 0));
         examples.add(new ExampleLogicOperator(new double[]{0, 1}, 1));
