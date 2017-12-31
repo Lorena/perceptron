@@ -11,12 +11,12 @@ public class Train {
         return weights;
     }
 
-    protected void train(Examples examples, Weights weights, double learningRate) {
+    protected void train(Examples examples, Weights weights) {
         this.weights = weights;
         System.out.println("Inicia o treinamento");
         do {
-            examples.noExistError();
-            this.weights.adjustTheCorrectWeightsAsExpectedExampleResult(examples, learningRate);
+            examples.cleanError();
+            this.weights.adjustWeightsAsExpectedExampleResult(examples);
             epoch++;
         } while (examples.hasError());
 

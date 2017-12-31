@@ -36,4 +36,8 @@ public class Example {
     public double getInputX(int indexInput) {
         return input[indexInput];
     }
+
+    public boolean isEqualsOutput(double result) {
+        return result == output;
+    }
 }

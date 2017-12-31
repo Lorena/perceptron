@@ -9,10 +9,12 @@ public class Weights {
 
     private final ActivationFunction activationFunction;
     private double[] weights;
+    private double learningRate;
 
-    public Weights(int lenght, ActivationFunction activationFunction) {
+    public Weights(int lenght, ActivationFunction activationFunction, double learningRate) {
         initializeWeightsRandom(lenght);
         this.activationFunction = activationFunction;
+        this.learningRate = learningRate;
     }
 
     public String show() {
@@ -23,17 +25,17 @@ public class Weights {
         return w;
     }
 
-    public void adjustTheCorrectWeightsAsExpectedExampleResult(Examples examples, double learningRate) {
+    public void adjustWeightsAsExpectedExampleResult(Examples examples) {
         for (Example example : examples.get()) {
             double activationFunctionResult = activationFunction.calcule(example, weights);
-            if (!activationFunction.isEqualsOutputExpected(example)) {
-                loadNewValues(example, activationFunctionResult, learningRate);
+            if (!example.isEqualsOutput(activationFunctionResult)) {
+                loadNewValues(example, activationFunctionResult);
                 examples.existError();
             }
         }
     }
 
-    private void loadNewValues(Example example, double activationFunctionResult, double learningRate) {
+    private void loadNewValues(Example example, double activationFunctionResult) {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = weights[i] + learningRate * (example.getOutput() - activationFunctionResult) * example.getInputX(i);
         }

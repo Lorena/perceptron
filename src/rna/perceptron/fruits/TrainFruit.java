@@ -14,7 +14,7 @@ public class TrainFruit extends Train {
     public TrainFruit() {
         Examples examples = new ExamplesOfFruit();
         ActivationFunction activationFunction = new ActivationFunction(SIGMOID_BIPOLAR_FUNCTION, THRESHOULD);
-        Weights weights = new Weights(examples.getInputLenght(), activationFunction);
-        train(examples, weights, LEARNING_RATE);
+        Weights weights = new Weights(examples.lenght(), activationFunction, LEARNING_RATE);
+        train(examples, weights);
     }
 }

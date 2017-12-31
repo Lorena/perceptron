@@ -13,8 +13,8 @@ public class TrainLogic extends Train {
 
     public TrainLogic() {
         Examples examples = new ExamplesOfLogicOperator("or");
-        ActivationFunction activationFunction = new ActivationFunction(SIGMOID_FUNCTION, THRESHOULD);
-        Weights weights = new Weights(examples.getInputLenght(), activationFunction);
-        train(examples, weights, LEARNING_RATE);
+        ActivationFunction sigmoidActivationFunction = new ActivationFunction(SIGMOID_FUNCTION, THRESHOULD);
+        Weights weightsRandon = new Weights(examples.lenght(), sigmoidActivationFunction, LEARNING_RATE);
+        train(examples, weightsRandon);
     }
 }

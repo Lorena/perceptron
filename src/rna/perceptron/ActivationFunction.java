@@ -50,10 +50,6 @@ public class ActivationFunction {
         return result = activationFunctionSigmoidBipolar(example);
     }
 
-    public boolean isEqualsOutputExpected(Example example) {
-        return result == example.getOutput();
-    }
-
     private double activationFunctionSigmoid(Example example) {
         double u = sumOfProductByExample(example);
         if (u > threshould) {

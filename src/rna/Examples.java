@@ -7,7 +7,7 @@ public class Examples {
     protected List<Example> examples;
     private boolean hasError;
 
-    public int getInputLenght() {
+    public int lenght() {
         return examples.get(0).getInputLenght();
     }
 
@@ -23,7 +23,7 @@ public class Examples {
         hasError = true;
     }
 
-    public void noExistError() {
+    public void cleanError() {
         hasError = false;
     }
 
