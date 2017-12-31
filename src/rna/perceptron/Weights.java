@@ -32,7 +32,7 @@ public class Weights {
     public void adjustWeightsAsExpectedExampleResult(Examples examples) {
         for (Example example : examples.get()) {
             double activationFunctionResult = activationFunction.calculateByExampleAndWeights(example, this);
-            if (!example.isEqualsOutput(activationFunctionResult)) {
+            if (!example.getOutput().isEqualsOutput(activationFunctionResult)) {
                 loadNewValues(example, activationFunctionResult);
                 examples.existError();
             }
@@ -41,7 +41,7 @@ public class Weights {
 
     private void loadNewValues(Example example, double activationFunctionResult) {
         for (int i = 0; i < weights.length; i++) {
-            weights[i] = weights[i] + learningRate * (example.getOutput() - activationFunctionResult) * example.getInputX(i);
+            weights[i] = weights[i] + learningRate * (example.getOutput().get() - activationFunctionResult) * example.getInput(i);
         }
     }
 

@@ -1,6 +1,5 @@
 package rna.perceptron.logic.operator;
 
-import rna.Example;
 import rna.Perceptron;
 
 public class NeuronLearningLogicOperator implements Perceptron {
@@ -12,8 +11,7 @@ public class NeuronLearningLogicOperator implements Perceptron {
         trainedNeuron = new TrainLogic();
     }
 
-    @Override
-    public void learningAnExample(Example example, String expected) {
+    public void learningAnExample(ExampleLogicOperator example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
         example.getOutputLogicLearned(trainedNeuron);
         System.out.println("Expected: " + expected);

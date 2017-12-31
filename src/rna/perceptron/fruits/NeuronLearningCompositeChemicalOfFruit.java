@@ -1,6 +1,5 @@
 package rna.perceptron.fruits;
 
-import rna.Example;
 import rna.Perceptron;
 
 public class NeuronLearningCompositeChemicalOfFruit implements Perceptron{
@@ -12,8 +11,7 @@ public class NeuronLearningCompositeChemicalOfFruit implements Perceptron{
         trainedNeuron = new TrainFruit();
     }
 
-    @Override
-    public void learningAnExample(Example example, String expected) {
+    public void learningAnExample(ExampleFruit example, String expected) {
         System.out.println("Executa o aprendizado por Perceptron: ");
         example.getOutputFruitLearned(trainedNeuron);
         System.out.println("Expected: " + expected);

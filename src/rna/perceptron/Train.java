@@ -4,6 +4,7 @@ import rna.Examples;
 
 public class Train {
 
+    protected ActivationFunction activationFunction;
     private Weights weights;
     private int epoch = 0;
 
@@ -22,6 +23,11 @@ public class Train {
 
         showInformationsTrain();
     }
+
+    public ActivationFunction getActivationFunction() {
+        return activationFunction;
+    }
+
 
     private void showInformationsTrain() {
         System.out.println("Numero de épocas necessárias: " + epoch);
