@@ -21,8 +21,9 @@ public class Train {
         return weights;
     }
 
-    protected void execute(double learningRate) {
+    protected void execute(double learningRate, double[] weights) {
         LEARNING_RATE = learningRate;
+        this.weights = weights;
         System.out.println("Inicia o treinamento");
         do {
             examples.noExistError();
@@ -33,8 +34,8 @@ public class Train {
         showInformations();
     }
 
-    protected void initializeWeightsRandom() {
-        weights = new double[examples.getInputLenght()];
+    protected void initializeWeightsRandom(int weightNumber) {
+        weights = new double[weightNumber];
         Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < weights.length; i++) {
             weights[i] = random.nextDouble();
