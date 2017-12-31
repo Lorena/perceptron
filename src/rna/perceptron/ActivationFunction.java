@@ -5,20 +5,26 @@ import rna.Example;
 public class ActivationFunction {
 
     private final String SIGMOID = "SIGMOID";
+    private Weights weightsObject;
 
     private double threshould;
     private final String functionName;
-    private Weights weights;
+    private double[] weights;
     private double result;
 
     public ActivationFunction(String functionName, double threshould, Weights weights) {
         this.functionName = functionName;
         this.threshould = threshould;
-        this.weights = weights;
+        this.weightsObject = weights;
+    }
+
+    public ActivationFunction(String functionName, double threshould) {
+        this.functionName = functionName;
+        this.threshould = threshould;
     }
 
     public void getResultedFruit(Example example) {
-        double sum = calcule(example);
+        double sum = calcule(example, weightsObject.get());
         if (sum == 1) {
             System.out.println("Resulted: " + "Tangerina");
         } else {
@@ -27,7 +33,7 @@ public class ActivationFunction {
     }
 
     public void getResulted(Example example) {
-        double sum = calcule(example);
+        double sum = calcule(example, weightsObject.get());
         if (sum == 1) {
             System.out.println("Resulted: " + "1");
         } else {
@@ -35,7 +41,8 @@ public class ActivationFunction {
         }
     }
 
-    public double calcule(Example example) {
+    public double calcule(Example example, double[] weights) {
+        this.weights = weights;
         if(SIGMOID.equals(functionName)){
             return result = activationFunctionSigmoid(example);
 
@@ -66,7 +73,7 @@ public class ActivationFunction {
     private double sumOfProductByExample(Example example) {
         double sum = 0.0;
         for (int i = 0; i < example.getInputLenght(); i++) {
-            sum += example.getInput()[i] * weights.get()[i];
+            sum += example.getInput()[i] * weights[i];
         }
         return sum;
     }

@@ -1,19 +1,18 @@
 package rna.perceptron;
 
 import rna.Example;
+import rna.Examples;
 
 import java.util.Random;
 
 public class Weights {
 
+    private final ActivationFunction activationFunction;
     private double[] weights;
 
-    public Weights(int lenght) {
+    public Weights(int lenght, ActivationFunction activationFunction) {
         initializeWeightsRandom(lenght);
-    }
-
-    public double[] get() {
-        return weights;
+        this.activationFunction = activationFunction;
     }
 
     public String show() {
@@ -24,9 +23,19 @@ public class Weights {
         return w;
     }
 
-    public void loadNewValues(Example exemple, double learningRate, double activationFunctionResult) {
+    public void adjustTheCorrectWeightsAsExpectedExampleResult(Examples examples, double learningRate) {
+        for (Example example : examples.get()) {
+            double activationFunctionResult = activationFunction.calcule(example, weights);
+            if (!activationFunction.isEqualsOutputExpected(example)) {
+                loadNewValues(example, activationFunctionResult, learningRate);
+                examples.existError();
+            }
+        }
+    }
+
+    private void loadNewValues(Example example, double activationFunctionResult, double learningRate) {
         for (int i = 0; i < weights.length; i++) {
-            weights[i] = weights[i] + learningRate * (exemple.getOutput() - activationFunctionResult) * exemple.getInputX(i);
+            weights[i] = weights[i] + learningRate * (example.getOutput() - activationFunctionResult) * example.getInputX(i);
         }
     }
 
@@ -36,5 +45,9 @@ public class Weights {
         for (int i = 0; i < weights.length; i++) {
             weights[i] = random.nextDouble();
         }
+    }
+
+    public double[] get() {
+        return weights;
     }
 }

@@ -1,42 +1,26 @@
 package rna.perceptron;
 
-import rna.Example;
 import rna.Examples;
 
 public class Train {
 
-    protected static double LEARNING_RATE;
-
-    protected Examples examples;
-    protected Weights weights;
-    protected ActivationFunction activationFunction;
-
+    private Weights weights;
     private int epoch = 0;
 
     public Weights getWeights() {
         return weights;
     }
 
-    protected void train(double learningRate) {
-        LEARNING_RATE = learningRate;
+    protected void train(Examples examples, Weights weights, double learningRate) {
+        this.weights = weights;
         System.out.println("Inicia o treinamento");
         do {
             examples.noExistError();
-            adjustTheCorrectWeights();
+            this.weights.adjustTheCorrectWeightsAsExpectedExampleResult(examples, learningRate);
             epoch++;
         } while (examples.hasError());
 
         showInformationsTrain();
-    }
-
-    private void adjustTheCorrectWeights() {
-        for (Example example : this.examples.get()) {
-            double activationFunctionResult = activationFunction.calcule(example);
-            if (!activationFunction.isEqualsOutputExpected(example)) {
-                weights.loadNewValues(example, LEARNING_RATE, activationFunctionResult);
-                examples.existError();
-            }
-        }
     }
 
     private void showInformationsTrain() {
